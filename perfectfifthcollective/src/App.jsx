@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 import logo from "./assets/logo.jpg";
 import mh from "./assets/MH.png";
@@ -7,7 +7,6 @@ import mh2 from "./assets/mh2.jpg";
 import mh3 from "./assets/mh3.jpg";
 import mh4 from "./assets/mh4.jpg";
 import mh5 from "./assets/mh5.jpg";
-import comingsoon from "./assets/mint-comingsoon.jpg";
 import icon1 from "./assets/icon-1.png";
 import icon2 from "./assets/icon-2.png";
 import icon3 from "./assets/icon-3.png";
@@ -19,8 +18,17 @@ import footer2 from "./assets/footer-2.png";
 import footer3 from "./assets/footer-3.png";
 import footer4 from "./assets/footer-4.png";
 
-import { Collapse } from "antd";
+import { Collapse, Slider } from "antd";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import { connect } from "./mint";
+
+const marks = {
+  1: "1",
+  2: "2",
+  3: "3",
+  4: "4",
+  5: "5",
+};
 
 const { Panel } = Collapse;
 
@@ -43,6 +51,19 @@ function App() {
       behavior: "smooth",
       block: "start",
     });
+
+  const [headsCount, setHeadsCount] = useState(1);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleConnect = () => {
+    connect()
+      .then((result) => {
+        setIsAuthenticated(result);
+      })
+      .catch((err) => {
+        setIsAuthenticated(err);
+      });
+  };
 
   return (
     <div className="App">
@@ -81,7 +102,35 @@ function App() {
             <img className="img" src={mh5} alt="" />
           </div>
           <div ref={mintRef} className="content">
-            <img className="img" src={comingsoon} alt="" />
+            <div className="mint">
+              <h2 className="h2">0000 / 2022</h2>
+              <p className="text">Music heads remaining</p>
+              <p className="text">.12 ETH</p>
+              <div className="amount">
+                <p className="text">Choose the amount you like</p>
+                <p className="value">{headsCount} Heads</p>
+              </div>
+              <Slider
+                marks={marks}
+                defaultValue={1}
+                min={1}
+                max={5}
+                onChange={(value) => setHeadsCount(value)}
+              />
+              <div className="mint-btn-wrapper">
+                <p className="content">{headsCount * 0.12} ETH</p>
+                <button className="mint-btn" disabled={true}>
+                  Mint
+                </button>
+              </div>
+              <button onClick={handleConnect} className="connect-btn">
+                {!isAuthenticated ? (
+                  <span> Connect your wallet</span>
+                ) : (
+                  <span> Metamask Connected </span>
+                )}
+              </button>
+            </div>
             <div className="text-wrapper">
               <p className="text">
                 MusicHead NFT holders enjoy access to our community of leaders

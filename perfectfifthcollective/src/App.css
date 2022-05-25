@@ -116,10 +116,86 @@
   padding: 5%;
 }
 
-.intro-wrapper .intro .content .img {
-  width: 30%;
+.intro-wrapper .intro .content .mint {
+  width: 80%;
+  padding: 2%;
   height: auto;
   border-radius: 10px;
+  background: linear-gradient(86deg, #6126db 0%, #d339a9 100%);
+}
+
+.intro-wrapper .intro .content .mint .h2,
+.intro-wrapper .intro .content .mint .text {
+  color: white;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro-wrapper .intro .content .mint .amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.intro-wrapper .intro .content .mint .amount .value {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro-wrapper .intro .content .mint .mint-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-wrapper .intro .content .mint .mint-btn-wrapper .content {
+  background-color: white;
+  width: 45%;
+  margin: 4% 0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 24px;
+  color: black;
+  font-weight: 700;
+}
+
+.intro-wrapper .intro .content .mint .mint-btn-wrapper .mint-btn {
+  color: #d339a9 !important;
+  border-width: 0px !important;
+  border-radius: 7px;
+  font-size: 24px;
+  font-weight: 700 !important;
+  border-width: 0px !important;
+  border-radius: 7px;
+  font-size: 24px;
+  font-weight: 700 !important;
+  background: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 45%;
+}
+
+.intro-wrapper .intro .content .mint .connect-btn {
+  color: #d339a9 !important;
+  border-width: 0px !important;
+  border-radius: 7px;
+  font-size: 24px;
+  font-weight: 700 !important;
+  border-width: 0px !important;
+  border-radius: 7px;
+  font-size: 24px;
+  font-weight: 700 !important;
+  background: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
 }
 
 @media screen and (max-width: 640px) {
@@ -139,11 +215,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0%;
+  }
+  .intro-wrapper .intro .content .mint {
+    width: 100%;
+    padding: 5%;
   }
 
   .intro-wrapper .intro .content .img {
     width: 80%;
     margin: 20px;
+  }
+  .intro-wrapper .intro .content .mint .mint-btn-wrapper .content {
+    padding: 15px;
   }
 }
 
