@@ -121,7 +121,7 @@
   padding: 2%;
   height: auto;
   border-radius: 10px;
-  background: linear-gradient(86deg, #6126db 0%, #d339a9 100%);
+  background: linear-gradient(to bottom, #6126db 0%, #d339a9 100%);
 }
 
 .intro-wrapper .intro .content .mint .h2,
