@@ -19,6 +19,11 @@ import footer2 from "./assets/footer-2.png";
 import footer3 from "./assets/footer-3.png";
 import footer4 from "./assets/footer-4.png";
 
+import { Collapse } from "antd";
+import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+
+const { Panel } = Collapse;
+
 function App() {
   const musiciansRef = useRef(null);
   const benefitsRef = useRef(null);
@@ -282,6 +287,43 @@ function App() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="faqs">
+        <h2 className="h2">FAQs</h2>
+        <Collapse
+          expandIcon={({ isActive }) =>
+            isActive ? <MinusOutlined /> : <PlusOutlined />
+          }
+          accordion
+          className="collapse"
+        >
+          <Panel header="How do I purchase?" key="1">
+            <p className="paneltext">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
+              eligendi deleniti officia ea, neque fugiat itaque incidunt
+              adipisci, iure nam aliquid illum illo dolore maiores. Harum sequi
+              quasi ducimus quae totam cupiditate dolorem amet nobis sed
+              voluptas aspernatur eaque dolore, doloribus voluptatem eveniet
+              voluptatum qui eum quia accusamus vero. Ea est pariatur omnis
+              perferendis molestias mollitia culpa neque fugit earum.
+            </p>
+          </Panel>
+          <Panel header="What is Gas?" key="2">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              reiciendis porro temporibus totam sint ipsum vero animi rerum fuga
+              dolores sed nihil quisquam modi nam sequi, distinctio consectetur.
+              In, sint.
+            </p>
+          </Panel>
+          <Panel header="Where do I buy ethereum?" key="3">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium numquam consequuntur natus deserunt, exercitationem
+              rerum nemo sit ab! Excepturi, molestias.
+            </p>
+          </Panel>
+        </Collapse>
       </section>
       <section className="terms">
         <h2 className="h2">Terms & Conditions</h2>

@@ -413,6 +413,56 @@
   font-size: 16px;
 }
 
+.faqs {
+  background-image: url("./assets/faq.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 5%;
+  text-align: center;
+}
+
+.faqs .h2 {
+  text-align: center;
+  color: #d339a9;
+  font-size: 57px;
+  font-weight: 700;
+  font-family: "Barlow Condensed", sans-serif;
+  margin: 0;
+}
+
+.ant-collapse {
+  border-style: solid;
+  border-width: 0;
+  border-radius: 0;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+  background-color: transparent;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ant-collapse-content {
+  border-top: 0;
+}
+
+.ant-collapse-content > .ant-collapse-content-box {
+  text-align: left;
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  border-style: solid;
+  color: white;
+  font-size: 14px;
+  background-color: black;
+}
+
+.ant-collapse > .ant-collapse-item {
+  border-bottom: 0px;
+}
+
 .terms {
   background-color: #201730 !important;
   padding: 5% 10%;
