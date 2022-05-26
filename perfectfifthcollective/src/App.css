@@ -28,6 +28,7 @@
   background-image: url("./assets/p5-banner-desktop.jpg");
   background-position: center;
   background-size: cover;
+  background-position-x: 60%;
 }
 
 .entry {
@@ -124,9 +125,16 @@
   background: linear-gradient(to bottom, #6126db 0%, #d339a9 100%);
 }
 
-.intro-wrapper .intro .content .mint .h2,
+.intro-wrapper .intro .content .mint .h2 {
+  color: white;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
 .intro-wrapper .intro .content .mint .text {
   color: white;
+  margin: 5px;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -140,9 +148,11 @@
 
 .intro-wrapper .intro .content .mint .amount .value {
   color: white;
-  font-size: 28px;
+  font-size: 57px;
   font-weight: 700;
-  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  margin: 0;
 }
 
 .intro-wrapper .intro .content .mint .mint-btn-wrapper {
@@ -166,16 +176,11 @@
   color: #d339a9 !important;
   border-width: 0px !important;
   border-radius: 7px;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 700 !important;
   border-width: 0px !important;
-  border-radius: 7px;
-  font-size: 24px;
-  font-weight: 700 !important;
+  font-family: "Barlow Condensed", sans-serif;
   background: white;
-  padding: 15px 20px;
-  cursor: pointer;
-  padding: 15px 20px;
   cursor: pointer;
   width: 45%;
 }
@@ -184,16 +189,13 @@
   color: #d339a9 !important;
   border-width: 0px !important;
   border-radius: 7px;
-  font-size: 24px;
-  font-weight: 700 !important;
+  font-size: 36px;
+  font-family: "Barlow Condensed", sans-serif;
   border-width: 0px !important;
   border-radius: 7px;
-  font-size: 24px;
   font-weight: 700 !important;
   background: white;
-  padding: 15px 20px;
   cursor: pointer;
-  padding: 15px 20px;
   cursor: pointer;
   width: 100%;
 }
@@ -518,7 +520,6 @@
   border-style: solid;
   border-width: 0;
   border-radius: 0;
-  box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
   background-color: transparent;
 }
 
@@ -545,6 +546,15 @@
 
 .ant-collapse > .ant-collapse-item {
   border-bottom: 0px;
+}
+
+.ant-slider-track,
+.ant-slider-rail {
+  height: 10px;
+}
+
+.ant-slider-handle {
+  margin-top: -2px;
 }
 
 .terms {

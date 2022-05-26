@@ -22,14 +22,6 @@ import { Collapse, Slider } from "antd";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import { connect } from "./mint";
 
-const marks = {
-  1: "1",
-  2: "2",
-  3: "3",
-  4: "4",
-  5: "5",
-};
-
 const { Panel } = Collapse;
 
 function App() {
@@ -104,14 +96,13 @@ function App() {
           <div ref={mintRef} className="content">
             <div className="mint">
               <h2 className="h2">0000 / 2022</h2>
-              <p className="text">Music heads remaining</p>
+              <p className="text">Music Heads Remaining</p>
               <p className="text">.12 ETH</p>
               <div className="amount">
-                <p className="text">Choose the amount you like</p>
-                <p className="value">{headsCount} Heads</p>
+                <p className="text">Choose the amount you'd like</p>
+                <p className="value">{headsCount} MUSICHEADS</p>
               </div>
               <Slider
-                marks={marks}
                 defaultValue={1}
                 min={1}
                 max={5}
@@ -120,14 +111,14 @@ function App() {
               <div className="mint-btn-wrapper">
                 <p className="content">{headsCount * 0.12} ETH</p>
                 <button className="mint-btn" disabled={true}>
-                  Mint
+                  MINT
                 </button>
               </div>
               <button onClick={handleConnect} className="connect-btn">
                 {!isAuthenticated ? (
-                  <span> Connect your wallet</span>
+                  <span> CONNECT YOUR WALLET</span>
                 ) : (
-                  <span> Metamask Connected </span>
+                  <span> METAMASK CONNECTED</span>
                 )}
               </button>
             </div>
