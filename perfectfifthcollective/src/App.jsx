@@ -301,21 +301,6 @@ function App() {
             </p>
           </div>
           <div className="content">
-            <h2 className="heading">Sasha D. Pisterman</h2>
-            <p className="text">
-              is Founder of PR agency, SDP Digital, and is a Multicultural
-              Publicity & Branding Strategist. She is skilled in crafting and
-              executing communications strategies rooted in culture that
-              authentically connect brands to their target audiences and
-              increase brand awareness. With ten years of experience working in
-              the entertainment, corporate, lifestyle, law, education, and
-              health sectors, she utilizes a grassroots approach when working
-              with brands to tell their story. Her clients have included BMI,
-              Interscope, Atlantic, Live Nation, Capitol Records, ASCAP, I Heart
-              Radio, J Lo, Snow The Product, DJ Mustard and more.
-            </p>
-          </div>
-          <div className="content">
             <h2 className="heading">Yushi X</h2>
             <p className="text">
               is an Australian based professional illustrator, graphic designer,
