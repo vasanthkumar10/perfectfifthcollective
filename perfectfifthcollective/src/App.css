@@ -130,6 +130,7 @@
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+  margin: 0;
 }
 
 .intro-wrapper .intro .content .mint .text {
@@ -137,6 +138,7 @@
   margin: 5px;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 .intro-wrapper .intro .content .mint .amount {
@@ -168,7 +170,7 @@
   border-radius: 10px;
   padding: 15px 20px;
   font-size: 24px;
-  color: black;
+  color: #6126db;
   font-weight: 700;
 }
 
@@ -200,6 +202,16 @@
   width: 100%;
 }
 
+@media screen and (max-width: 900px) {
+  .intro-wrapper .intro .content .mint .connect-btn {
+    font-size: 30px;
+  }
+
+  .intro-wrapper .intro .content .mint {
+    min-width: 50%;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .intro-wrapper .intro .imgs {
     display: flex;
@@ -222,6 +234,7 @@
   .intro-wrapper .intro .content .mint {
     width: 100%;
     padding: 5%;
+    margin: 10px;
   }
 
   .intro-wrapper .intro .content .img {
