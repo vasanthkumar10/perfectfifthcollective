@@ -166,7 +166,7 @@
 .intro-wrapper .intro .content .mint .mint-btn-wrapper .content {
   background-color: white;
   width: 45%;
-  margin: 4% 0;
+  margin: 6% 0;
   border-radius: 10px;
   padding: 15px 20px;
   font-size: 24px;
@@ -563,11 +563,13 @@
 
 .ant-slider-track,
 .ant-slider-rail {
-  height: 10px;
+  height: 20px;
 }
 
 .ant-slider-handle {
   margin-top: -2px;
+  width: 25px;
+  height: 25px;
 }
 
 .terms {
