@@ -176,7 +176,7 @@ function App() {
             <img src={icon1} alt="" />
             <p className="heading">EXCLUSIVE ACCESS</p>
             <p className="text">NFT Holders access to:</p>
-            <ul style={{ marginLeft: "40px" }}>
+            <ul style={{ marginLeft: "20%" }}>
               <li>Industry leaders</li>
               <li>events and activations</li>
               <li>limited edition merch</li>
