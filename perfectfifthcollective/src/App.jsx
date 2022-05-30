@@ -99,7 +99,7 @@ function App() {
               <p className="text">Music Heads Remaining</p>
               <p className="text">.12 ETH</p>
               <div className="amount">
-                <p className="text">Choose the amount you'd like</p>
+                <p className="text">Use the slider to select the amount</p>
                 <p className="value">{headsCount} MUSICHEADS</p>
               </div>
               <Slider
@@ -174,9 +174,9 @@ function App() {
         <div className="content-wrapper">
           <div className="content">
             <img src={icon1} alt="" />
-            <p className="heading">Exclusive Access</p>
+            <p className="heading">EXCLUSIVE ACCESS</p>
             <p className="text">NFT Holders access to:</p>
-            <ul>
+            <ul style={{ marginLeft: "40px" }}>
               <li>Industry leaders</li>
               <li>events and activations</li>
               <li>limited edition merch</li>
@@ -186,7 +186,7 @@ function App() {
           </div>
           <div className="content">
             <img src={icon2} alt="" />
-            <p className="heading">Collective Ownership</p>
+            <p className="heading">COLLECTIVE OWNERSHIP</p>
             <p className="text">
               As songs are released, the community will decide how they will be
               launched, promoted, monetized, leveraged for social good and more.
@@ -194,7 +194,7 @@ function App() {
           </div>
           <div className="content">
             <img src={icon3} alt="" />
-            <p className="heading">Social Good</p>
+            <p className="heading">SOCIAL GOOD</p>
             <p className="text">
               10% of all music revenue will be invested in social good
               initiatives and programs.
@@ -334,46 +334,48 @@ function App() {
             </p>
           </Panel>
           <Panel header="How Do I get an NFT?" key="2">
-            <p>
+            <p className="paneltext">
               It will be available for purchase on our website through an
               initial sale.
             </p>
-            <p>
+            <p className="paneltext">
               At the time of purchase, a randomly selected NFT will be minted on
               the blockchain and delivered to your wallet and OpenSea account.
             </p>
-            <p>
+            <p className="paneltext">
               Once it is sold out, you can get a Perfect Fifth Collective NFT on
               the secondary market (on OpenSea) only.
             </p>
           </Panel>
           <Panel header="How do I purchase one?" key="3">
-            <p>
+            <p className="paneltext">
               The easiest way is to install a MetaMask extension in your Chrome
               browser and link your Ethereum wallet to it.
             </p>
-            <p>
+            <p className="paneltext">
               Ensure you have enough ETH in your wallet to cover the cost of a
               NFT plus the associated transaction (gas) fees.
             </p>
-            <p>Approve the transaction on MetaMask and you are all set.</p>
-            <p>
+            <p className="paneltext">
+              Approve the transaction on MetaMask and you are all set.
+            </p>
+            <p className="paneltext">
               Perfect Fifth Collections will be available to mint on:
               www.perfectfifthcollective.com only.
             </p>
           </Panel>
           <Panel header="What is the total supply?" key="4">
-            <p>
+            <p className="paneltext">
               Each collection will hold 2022 unique Perfect Fifth Collective
               NFTs.
             </p>
           </Panel>
           <Panel header="How much does it cost to mint a NFT?" key="5">
-            <p>
+            <p className="paneltext">
               The Price of Minting Music Head is 0.12 ETH.Where can I view my
               NFT?
             </p>
-            <p>
+            <p className="paneltext">
               Once minted, you'll just need to login into your OpenSea account
               to view your NFTs. For Holders who have CoinBase wallets, CoinBase
               has now added NFT’s to be held in your account using desktop
@@ -381,17 +383,17 @@ function App() {
             </p>
           </Panel>
           <Panel header="Will there be a presale?" key="6">
-            <p>
+            <p className="paneltext">
               Yes, 222 spots. We will make sure that early & active community
               members will be rewarded by getting a spot.
             </p>
-            <p>
+            <p className="paneltext">
               The Pre-Sale will take place on June 19, 2022. The Public Sale
               will take place on June 24th 2022.
             </p>
           </Panel>
           <Panel header="How many NFT’s can I mint?" key="7">
-            <p>
+            <p className="paneltext">
               Whitelisted members (for pre-sale) will each be able to mint 5 NFT
               during the pre-sale, this is limited to 222 members. 222 NFT max
               will be minted during the pre-sale. During our public launch on
@@ -404,7 +406,7 @@ function App() {
             header="How will the traits and rarities be determined?"
             key="8"
           >
-            <p>
+            <p className="paneltext">
               Each Perfect Fifth Collection is 100% unique and is
               programmatically generated from 100+ hand drawn traits. We will
               share our Rarity Sheet shortly after the reveal.
@@ -415,7 +417,7 @@ function App() {
 reveal?"
             key="9"
           >
-            <p>
+            <p className="paneltext">
               We reveal the Perfect Fifth Collection 1, 48-hours after the
               public mint. Before that, Collection 1 will remain hidden!
             </p>

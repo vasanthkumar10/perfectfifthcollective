@@ -168,9 +168,10 @@
   width: 45%;
   margin: 6% 0;
   border-radius: 10px;
-  padding: 15px 20px;
-  font-size: 24px;
-  color: #6126db;
+  padding: 10px;
+  font-size: 32px;
+  color: #c346a5;
+  font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
 }
 
@@ -240,9 +241,6 @@
   .intro-wrapper .intro .content .img {
     width: 80%;
     margin: 20px;
-  }
-  .intro-wrapper .intro .content .mint .mint-btn-wrapper .content {
-    padding: 15px;
   }
 }
 
@@ -344,6 +342,10 @@
   width: auto;
   margin: 10px;
   max-width: 34%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 @media screen and (max-width: 640px) {
@@ -544,6 +546,7 @@
 
 .ant-collapse-content {
   border-top: 0;
+  background-color: transparent;
 }
 
 .ant-collapse-content > .ant-collapse-content-box {
@@ -554,20 +557,22 @@
   border-style: solid;
   color: white;
   font-size: 14px;
-  background-color: black;
 }
 
 .ant-collapse > .ant-collapse-item {
   border-bottom: 0px;
 }
 
-.ant-slider-track,
+.ant-slider-track {
+  height: 10px;
+}
 .ant-slider-rail {
-  height: 20px;
+  height: 10px;
+  background-color: #a092cb;
 }
 
 .ant-slider-handle {
-  margin-top: -2px;
+  margin-top: -7px;
   width: 25px;
   height: 25px;
 }
@@ -600,4 +605,9 @@
   font-size: 16px;
   color: white;
   font-weight: 500;
+}
+
+.paneltext {
+  margin: 0 0 0 30px;
+  line-height: 2;
 }
