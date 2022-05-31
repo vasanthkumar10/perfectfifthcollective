@@ -442,6 +442,8 @@
 .musicians .content .h2 {
   color: #d339a9;
   font-size: 23px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
 }
 
 .musicians .content .text {
@@ -509,6 +511,8 @@
 .team .content-wrapper .content .heading {
   color: #d339a9;
   font-size: 23px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
 }
 
 .team .content-wrapper .content .text {
