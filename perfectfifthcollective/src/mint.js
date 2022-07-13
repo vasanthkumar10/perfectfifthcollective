@@ -43,17 +43,17 @@ const metamaskButton = document.getElementById("connectMeta");
 const mintButton = document.getElementById("mintButton");
 const salesProgress = document.getElementById("salesProgress");
 const loaded = false;
-let contractAddress = "0x6f4903f488f673f201d82500a78bf63558b83eb1";
-let proxyAddress = "0x6f4903f488f673f201d82500a78bf63558b83eb1";
+let contractAddress = "0x97e8ea727650a8a14fbf2a4d5961205c71a7b514";
+let proxyAddress = "0x97e8ea727650a8a14fbf2a4d5961205c71a7b514";
 window.web3 = new Web3(
-  "https://mainnet.infura.io/v3/d2b100de29704153a93984e5e84f5c00"
+  "https://mainnet.infura.io/v3/38a6c4e634ac415e862bcd95d26e1938"
 );
 
 export async function addPercentages() {
-  contractAddress = "0x6f4903f488f673f201d82500a78bf63558b83eb1";
+  contractAddress = "0x97e8ea727650a8a14fbf2a4d5961205c71a7b514";
   const contracts = new window.web3.eth.Contract(ABI, contractAddress);
   const supply = await contracts.methods.totalSupply().call();
-  const total = 9999;
+  const total = 2022;
   const progresspercent = supply ? ((supply / total) * 100).toFixed(2) : 0;
 
   return progresspercent;
@@ -132,7 +132,7 @@ export async function mint(resolve, reject) {
         .mint(number)
         .send({
           from: account_global,
-          value: 50000000000000000 * parseInt(number, 10),
+          value: 80000000000000000 * parseInt(number, 10),
         })
         .then((txHash) => {
           resolve(
