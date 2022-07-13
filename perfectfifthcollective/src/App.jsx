@@ -19,7 +19,7 @@ import footer3 from "./assets/footer-3.png";
 import footer4 from "./assets/footer-4.png";
 
 import { Collapse, Slider } from "antd";
-import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import { PlusOutlined, MinusOutlined, TwitterSquareFilled, LinkedinFilled } from "@ant-design/icons";
 import { connect,mint } from "./mint";
 
 const { Panel } = Collapse;
@@ -119,10 +119,17 @@ function App() {
               <p className="text">.08 ETH</p>
               <div className="amount">
                 <p className="text">Use the slider to select the amount</p>
-                <p className="value">{headsCount} MUSICHEADS
-                <input type="text" hidden="true" id="number-musicheads" value={headsCount} /></p>
+                <p className="value">
+                  {headsCount} MUSICHEADS
+                  <input
+                    type="text"
+                    hidden="true"
+                    id="number-musicheads"
+                    value={headsCount}
+                  />
+                </p>
               </div>
-              <Slider 
+              <Slider
                 defaultValue={1}
                 min={1}
                 max={5}
@@ -130,8 +137,12 @@ function App() {
               />
               <div className="mint-btn-wrapper">
                 <p className="content">{headsCount * 0.08} ETH</p>
-                
-                <button className="mint-btn" onClick={handleMint} hidden={!isAuthenticated}>
+
+                <button
+                  className="mint-btn"
+                  onClick={handleMint}
+                  hidden={!isAuthenticated}
+                >
                   MINT
                 </button>
               </div>
@@ -162,9 +173,16 @@ function App() {
         <h2 className="h2">ROADMAP</h2>
         <h3 className="h3">Launch</h3>
         <p className="text">
-          We are minting 2022 unique music head NFTs for .12 ETH each. The First
-          222 will be reserved for 24 hour whitelist presale at .05 ETH. Holders
-          of the first 222 will gain access to our exclusive DTLA launch party.
+          We are minting 2022 unique music head NFTs for .12 ETH each. We will
+          be whitelisting the first 222 will be reserved for a whitelist presale
+          at .08 ETH until August 24th. Holders of the first 222 will gain
+          access to our exclusive launch party at Buzzfeed in Los Angeles on
+          August 27th, 2022. We have a special headliner that is going to have
+          Buzzfeed lit! After all songs are released, we will host a music
+          festival in Los Angeles California with P5C affiliated artists and
+          mainstream headliners. All MusicHead holders will be invited to
+          attend. We will give MusicHead holders 6 month lead time to prepare
+          for attendance.
         </p>
         <div className="vertical"></div>
         <h3 className="h3">Music Releases</h3>
@@ -280,53 +298,128 @@ function App() {
         <div className="content-wrapper">
           <div className="content">
             <h2 className="heading">Jay Ramirez</h2>
-            <p className="text">
-              Jay Ramirez is a music & tech executive, Loyola Marymount business
-              coach, and 1500 or Nothing Academy producer. In 2007, Justin
-              founded music publication, Revibe, which spread through 28
-              countries and garnered millions of views. Through this medium he
-              was able to build brand partnerships and various multi-media
-              campaign collaborations with Grammy nominated artists and brands
-              such as BuzzFeed, iHeartRadio, PayDayLA, Elevator Mag, Brain
-              Bakery, etc. Justin is the Founder of a blockchain-based music
-              label, Perfect Fifth Collective, aiming to help democratize the
-              music industry.
-            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <a
+                href="https://www.linkedin.com/in/thehumbleagent/"
+                target={"_blank"}
+              >
+                <LinkedinFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+              <a href="https://twitter.com/plyteboy" target={"_blank"}>
+                <TwitterSquareFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+            </div>
           </div>
           <div className="content">
             <h2 className="heading">Brian Giboney</h2>
-            <p className="text">
-              Brian is a 20 year design and marketing veteran with clients
-              ranging from fortune 500 like Toshiba and Black and Decker to
-              local small businesses. In 2011 Brian launched an education
-              technology / software start-up and landed a major state university
-              and healthcare company as clients. In 2015 he co-founded plyte
-              artist development serving as CTO alongside Justin. Since then
-              Brian has overseen multiple enterprise software builds. In
-              addition to P5, Brian has consulted on multiple other NFT
-              collections with over 8,000 tokens minted.
-            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <a
+                href="https://www.linkedin.com/in/briangiboney/"
+                target={"_blank"}
+              >
+                <LinkedinFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+              <a href="https://twitter.com/getdigitalsky" target={"_blank"}>
+                <TwitterSquareFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+            </div>
           </div>
           <div className="content">
             <h2 className="heading">Rachel Ramirez</h2>
-            <p className="text">
-              Rachel Ramirez is an entrepreneur, philanthropist, and artist who
-              has built programs and companies focused around health, tech, and
-              the performing arts. She spent 6 years as Director of Emerging
-              Artists and Executives for Young Angels of America creating art
-              and leadership programs for teens. She is a member of Rotary
-              International, and sits on the Westchester, CA E-board as Peace
-              Chair. She is the Founder of Fit Mindful Body Club, creating a
-              virtual wellness club for companies to improve their work culture
-              and address employee health.
-            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <a href="https://twitter.com/rayray510" target={"_blank"}>
+                <LinkedinFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rachel-ramirez-3a7aa958/"
+                target={"_blank"}
+              >
+                <TwitterSquareFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+            </div>
           </div>
           <div className="content">
             <h2 className="heading">Sivasai</h2>
-            <p className="text">
-              Sivasai is an Indian based professional software developer. He is the founder of 
-              He has worked on several NFT projects including the sold out collection, Calix crocs.
-            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <a href="https://www.linkedin.com/in/sivasai-thota-375726110/" target={"_blank"}>
+                <LinkedinFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+              <a href="https://twitter.com/sivasaithota30" target={"_blank"}>
+                <TwitterSquareFilled
+                  style={{
+                    color: "#0a66c2",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -405,9 +498,10 @@ function App() {
               members will be rewarded by getting a spot.
             </p>
             <p className="paneltext">
-              The Pre-Sale will take place from June 24th - August 24th allowing us 
-              time to gather all attendees credentials and submit to Buzzfeed for 
-              their security and attendee confirmations. The public mint date will be August 27th at 7pm PST.
+              The Pre-Sale will take place from June 24th - August 24th allowing
+              us time to gather all attendees credentials and submit to Buzzfeed
+              for their security and attendee confirmations. The public mint
+              date will be August 27th at 7pm PST.
             </p>
           </Panel>
           <Panel header="How many NFT’s can I mint?" key="7">
@@ -415,7 +509,7 @@ function App() {
               Whitelisted members (for pre-sale) will each be able to mint 5 NFT
               during the pre-sale, this is limited to 222 members. 222 NFT max
               will be minted during the pre-sale. During our public launch on
-              June 24th, 1,800 NFTs will remain. Each transaction will be
+              August 27th, 1,800 NFTs will remain. Each transaction will be
               limited to 5 NFTs in order to give everyone a fair chance &
               prevent bots from sweeping.
             </p>
@@ -458,7 +552,12 @@ reveal?"
             <img src={footer4} alt="" />
           </a>
         </div>
-        <a href="https://etherscan.io/address/0x97e8ea727650a8a14fbf2a4d5961205c71a7b514" className="text">Contract</a>
+        <a
+          href="https://etherscan.io/address/0x97e8ea727650a8a14fbf2a4d5961205c71a7b514"
+          className="text"
+        >
+          Contract
+        </a>
       </section>
     </div>
   );
