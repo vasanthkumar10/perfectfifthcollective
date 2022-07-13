@@ -20,7 +20,7 @@ import footer4 from "./assets/footer-4.png";
 
 import { Collapse, Slider } from "antd";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
-import { connect } from "./mint";
+import { connect,mint } from "./mint";
 
 const { Panel } = Collapse;
 
@@ -46,6 +46,8 @@ function App() {
 
   const [headsCount, setHeadsCount] = useState(1);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [status, setStatus] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const handleConnect = () => {
     connect()
@@ -56,6 +58,23 @@ function App() {
         setIsAuthenticated(err);
       });
   };
+
+  const handleMint = async () => {
+    let result = new Promise((resolve,reject) => {
+      mint(resolve, reject);
+    })
+
+    setLoader(true)
+    result.then((status) => {
+      setStatus(status)
+      setLoader(false)
+    })
+    .catch((err) => {
+      console.log(err)
+      setStatus(err)
+      setLoader(false)
+    })
+}
 
   return (
     <div className="App">
@@ -95,22 +114,24 @@ function App() {
           </div>
           <div ref={mintRef} className="content">
             <div className="mint">
-              <h2 className="h2">0000 / 2022</h2>
-              <p className="text">Music Heads Remaining</p>
-              <p className="text">.12 ETH</p>
+              {/* <h2 className="h2">0000 / 2022</h2>
+              <p className="text">Music Heads Remaining</p> */}
+              <p className="text">.08 ETH</p>
               <div className="amount">
                 <p className="text">Use the slider to select the amount</p>
-                <p className="value">{headsCount} MUSICHEADS</p>
+                <p className="value">{headsCount} MUSICHEADS
+                <input type="text" hidden="true" id="number-musicheads" value={headsCount} /></p>
               </div>
-              <Slider
+              <Slider 
                 defaultValue={1}
                 min={1}
                 max={5}
                 onChange={(value) => setHeadsCount(value)}
               />
               <div className="mint-btn-wrapper">
-                <p className="content">{headsCount * 0.12} ETH</p>
-                <button className="mint-btn" disabled={true}>
+                <p className="content">{headsCount * 0.08} ETH</p>
+                
+                <button className="mint-btn" onClick={handleMint} hidden={!isAuthenticated}>
                   MINT
                 </button>
               </div>
@@ -301,14 +322,10 @@ function App() {
             </p>
           </div>
           <div className="content">
-            <h2 className="heading">Yushi X</h2>
+            <h2 className="heading">Sivasai</h2>
             <p className="text">
-              is an Australian based professional illustrator, graphic designer,
-              and NFT artist. She received her Arts degree from the University
-              of New South Wales. She focuses on 2D illustrations, 2D animation,
-              and 3D character designs for NFT projects. She has worked on
-              several NFT projects including the sold out collection, Wanna
-              Panda.
+              Sivasai is an Indian based professional software developer. He is the founder of 
+              He has worked on several NFT projects including the sold out collection, Calix crocs.
             </p>
           </div>
         </div>
@@ -361,7 +378,7 @@ function App() {
             </p>
             <p className="paneltext">
               Perfect Fifth Collections will be available to mint on:
-              www.perfectfifthcollective.com only.
+              musicHeads.perfectfifthcollective.com only.
             </p>
           </Panel>
           <Panel header="What is the total supply?" key="4">
@@ -372,7 +389,7 @@ function App() {
           </Panel>
           <Panel header="How much does it cost to mint a NFT?" key="5">
             <p className="paneltext">
-              The Price of Minting Music Head is 0.12 ETH.Where can I view my
+              The Price of Minting Music Head is 0.08 ETH.Where can I view my
               NFT?
             </p>
             <p className="paneltext">
@@ -388,8 +405,9 @@ function App() {
               members will be rewarded by getting a spot.
             </p>
             <p className="paneltext">
-              The Pre-Sale will take place on June 19, 2022. The Public Sale
-              will take place on June 24th 2022.
+              The Pre-Sale will take place from June 24th - August 24th allowing us 
+              time to gather all attendees credentials and submit to Buzzfeed for 
+              their security and attendee confirmations. The public mint date will be August 27th at 7pm PST.
             </p>
           </Panel>
           <Panel header="How many NFT’s can I mint?" key="7">
@@ -427,7 +445,7 @@ reveal?"
       <section className="terms">
         <h2 className="h2">Terms & Conditions</h2>
         <div className="icons">
-          <a href="https://opensea.io/">
+          <a href="https://opensea.io/collection/musichead-nft">
             <img src={footer1} alt="" />
           </a>
           <a href="https://discord.com/invite/62xKhR2HTy">
@@ -440,7 +458,7 @@ reveal?"
             <img src={footer4} alt="" />
           </a>
         </div>
-        <p className="text">Contract Coming Soon!</p>
+        <a href="https://etherscan.io/address/0x97e8ea727650a8a14fbf2a4d5961205c71a7b514" className="text">Contract</a>
       </section>
     </div>
   );
