@@ -19,8 +19,13 @@ import footer3 from "./assets/footer-3.png";
 import footer4 from "./assets/footer-4.png";
 
 import { Collapse, Slider } from "antd";
-import { PlusOutlined, MinusOutlined, TwitterSquareFilled, LinkedinFilled } from "@ant-design/icons";
-import { connect,mint } from "./mint";
+import {
+  PlusOutlined,
+  MinusOutlined,
+  TwitterSquareFilled,
+  LinkedinFilled,
+} from "@ant-design/icons";
+import { connect, mint } from "./mint";
 
 const { Panel } = Collapse;
 
@@ -48,6 +53,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [status, setStatus] = useState("");
   const [loader, setLoader] = useState(false);
+  const [isETH, setIsETH] = useState(true);
 
   const handleConnect = () => {
     connect()
@@ -60,21 +66,22 @@ function App() {
   };
 
   const handleMint = async () => {
-    let result = new Promise((resolve,reject) => {
+    let result = new Promise((resolve, reject) => {
       mint(resolve, reject);
-    })
+    });
 
-    setLoader(true)
-    result.then((status) => {
-      setStatus(status)
-      setLoader(false)
-    })
-    .catch((err) => {
-      console.log(err)
-      setStatus(err)
-      setLoader(false)
-    })
-}
+    setLoader(true);
+    result
+      .then((status) => {
+        setStatus(status);
+        setLoader(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setStatus(err);
+        setLoader(false);
+      });
+  };
 
   return (
     <div className="App">
@@ -145,10 +152,63 @@ function App() {
                 >
                   MINT
                 </button>
+                <div hidden={isAuthenticated}>
+                  <input
+                    type="radio"
+                    onChange={(e) => {
+                      setIsETH(true);
+                    }}
+                    style={{ marginRight: "10px", marginLeft: "10px" }}
+                    defaultChecked
+                    name="type"
+                    id="eth"
+                  />
+                  <label
+                    htmlFor="eth"
+                    style={{
+                      marginRight: "10px",
+                      fontSize: "20px",
+                      color: "white",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    ETH
+                  </label>
+                  <input
+                    type="radio"
+                    onChange={(e) => {
+                      setIsETH(false);
+                    }}
+                    style={{ marginRight: "10px" }}
+                    name="type"
+                    id="usd"
+                  />
+                  <label
+                    htmlFor="usd"
+                    style={{
+                      marginRight: "20px",
+                      fontSize: "20px",
+                      color: "white",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    USD
+                  </label>
+                </div>
               </div>
-              <button onClick={handleConnect} className="connect-btn">
+              <button className="connect-btn">
                 {!isAuthenticated ? (
-                  <span> CONNECT YOUR WALLET</span>
+                  isETH ? (
+                    <span onClick={handleConnect}> CONNECT YOUR WALLET</span>
+                  ) : (
+                    <a
+                      style={{ color: "#d339a9" }}
+                      target="_blank"
+                      href="https://paper.xyz/checkout/1ba8ab01-1f35-4cf3-aa95-15d64b7a6660"
+                    >
+                      NEXT
+                    </a>
+                  )
                 ) : (
                   <span> METAMASK CONNECTED</span>
                 )}
@@ -173,16 +233,12 @@ function App() {
         <h2 className="h2">ROADMAP</h2>
         <h3 className="h3">Launch</h3>
         <p className="text">
-          We are minting 2022 unique music head NFTs for .12 ETH each. We will
+          We are minting 2022 unique music head NFTs for .08 ETH each. We will
           be whitelisting the first 222 will be reserved for a whitelist presale
-          at .08 ETH until August 24th. Holders of the first 222 will gain
+          at .06 ETH until August 24th. Holders of the first 222 will gain
           access to our exclusive launch party at Buzzfeed in Los Angeles on
           August 27th, 2022. We have a special headliner that is going to have
-          Buzzfeed lit! After all songs are released, we will host a music
-          festival in Los Angeles California with P5C affiliated artists and
-          mainstream headliners. All MusicHead holders will be invited to
-          attend. We will give MusicHead holders 6 month lead time to prepare
-          for attendance.
+          Buzzfeed lit!
         </p>
         <div className="vertical"></div>
         <h3 className="h3">Music Releases</h3>
@@ -203,7 +259,7 @@ function App() {
         <p className="text">
           After all songs are released, we will host a music festival in Los
           Angeles California with P5C affiliated artists and mainstream
-          headliners. Only MusicHead holders will be invited to attend. We will
+          headliners. All MusicHead holders will be invited to attend. We will
           give MusicHead holders 6 month lead time to prepare for attendance.
         </p>
         <div className="cross2"></div>
@@ -401,7 +457,10 @@ function App() {
                 alignItems: "center",
               }}
             >
-              <a href="https://www.linkedin.com/in/sivasai-thota-375726110/" target={"_blank"}>
+              <a
+                href="https://www.linkedin.com/in/sivasai-thota-375726110/"
+                target={"_blank"}
+              >
                 <LinkedinFilled
                   style={{
                     color: "#0a66c2",
